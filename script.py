@@ -13,6 +13,16 @@ class RequestHandler(BaseHTTPRequestHandler):
 server = HTTPServer(('', 8000), RequestHandler)
 server.serve_forever()
 
+import requests
+
+url = 'http://localhost:8000'
+data = {'interests': interests, 'skills': skills}
+headers = {'Content-Type': 'application/json'}
+
+response = requests.post(url, json=data, headers=headers)
+result = response.text
+
+
 
 def personalized_learning(child, database):
     """
