@@ -2,6 +2,7 @@ import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.neighbors import NearestNeighbors
 from http.server import HTTPServer, BaseHTTPRequestHandler
+import requests
 
 class RequestHandler(BaseHTTPRequestHandler):
     def do_POST(self):
@@ -13,7 +14,6 @@ class RequestHandler(BaseHTTPRequestHandler):
 server = HTTPServer(('', 8000), RequestHandler)
 server.serve_forever()
 
-import requests
 
 url = 'https://mjd823.github.io/Public-Python-Repo/'
 data = {'interests': interests, 'skills': skills}
