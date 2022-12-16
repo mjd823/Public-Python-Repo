@@ -11,7 +11,7 @@ form.addEventListener('submit', (event) => {
   const data = { interests, skills };
 
   // Send an HTTP POST request to the Python script with the data as the request body
-  fetch('/path/to/python/script', {
+  fetch('https://mjd823.github.io/Public-Python-Repo/script.py', {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
