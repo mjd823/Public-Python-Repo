@@ -1,28 +1,3 @@
-import numpy
-from sklearn.cluster import KMeans
-from sklearn.neighbors import NearestNeighbors
-from http.server import HTTPServer, BaseHTTPRequestHandler
-
-class RequestHandler(BaseHTTPRequestHandler):
-    def do_POST(self):
-        # Process the request here
-        self.send_response(200)
-        self.end_headers()
-        self.wfile.write(b'response data')
-
-server = HTTPServer(('', 8000), RequestHandler)
-server.serve_forever()
-
-import requests
-
-url = 'https://mjd823.github.io/Public-Python-Repo/'
-data = {'interests': interests, 'skills': skills}
-headers = {'Content-Type': 'application/json'}
-
-response = requests.post(url, json=data, headers=headers)
-result = response.text
-
-
 
 def personalized_learning(child, database):
     """
@@ -127,7 +102,7 @@ def create_vector(interests, skills):
     Creates a vector representation of the interests and skills.
     """
     # Create a vector representation of the interests and skills
-    vector = numpy.zeros(len(interests) + len(skills))
+    vector = np.zeros(len(interests) + len(skills))
     for i, interest in enumerate(interests):
         vector[i] = 1
     for i, skill in enumerate(skills):
