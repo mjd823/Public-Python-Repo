@@ -15,7 +15,7 @@ server.serve_forever()
 
 import requests
 
-url = 'http://localhost:8000'
+url = 'https://mjd823.github.io/Public-Python-Repo/'
 data = {'interests': interests, 'skills': skills}
 headers = {'Content-Type': 'application/json'}
 
