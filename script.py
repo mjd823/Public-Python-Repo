@@ -1,4 +1,4 @@
-import numpy as np
+import numpy
 from sklearn.cluster import KMeans
 from sklearn.neighbors import NearestNeighbors
 from http.server import HTTPServer, BaseHTTPRequestHandler
@@ -127,7 +127,7 @@ def create_vector(interests, skills):
     Creates a vector representation of the interests and skills.
     """
     # Create a vector representation of the interests and skills
-    vector = np.zeros(len(interests) + len(skills))
+    vector = numpy.zeros(len(interests) + len(skills))
     for i, interest in enumerate(interests):
         vector[i] = 1
     for i, skill in enumerate(skills):
