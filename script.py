@@ -1,4 +1,26 @@
+import numpy as np
+from sklearn.cluster import KMeans
+from sklearn.neighbors import NearestNeighbors
+from http.server import HTTPServer, BaseHTTPRequestHandler
 
+class RequestHandler(BaseHTTPRequestHandler):
+    def do_POST(self):
+        # Process the request here
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b'response data')
+
+server = HTTPServer(('', 8000), RequestHandler)
+server.serve_forever()
+
+import requests
+
+url = 'https://mjd823.github.io/Public-Python-Repo/'
+data = {'interests': interests, 'skills': skills}
+headers = {'Content-Type': 'application/json'}
+
+response = requests.post(url, json=data, headers=headers)
+result = response.text
 def personalized_learning(child, database):
     """
     Retrieves resources related to the child's interests and skills, and finds the ones
