@@ -66,3 +66,17 @@ A list of activities based on the children's interests and the available resourc
 
 filter_by_interest(children, resources)
 This function filters the resources to only include ones that are relevant to the children's interests.
+
+
+
+
+
+PERSONALIZED LEARNING PAGE
+This HTML page includes a form that allows users to enter their interests and skills, and a button to submit the form. It also includes a div element with the ID results that will be used to display the results of the personalized_learning function.
+
+then use JavaScript to send an HTTP request to Python script when the form is submitted, and update the results element with the returned data:
+
+This code listens for the submit event on the form element, and prevents the default form submission behavior. It then gets the values of the interests and skills inputs and constructs a JavaScript object with these values. It uses the fetch function to send an HTTP POST request to the Python script with the data as the request body, and sets the Content-Type header to application/json to indicate that the data is in JSON format.
+
+When the response is received, the code parses the response as JSON and updates the results element with the data.
+
