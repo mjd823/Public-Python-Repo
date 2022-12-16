@@ -1,6 +1,18 @@
 import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.neighbors import NearestNeighbors
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+class RequestHandler(BaseHTTPRequestHandler):
+    def do_POST(self):
+        # Process the request here
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b'response data')
+
+server = HTTPServer(('', 8000), RequestHandler)
+server.serve_forever()
+
 
 def personalized_learning(child, database):
     """
